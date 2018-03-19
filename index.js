@@ -20,7 +20,7 @@ function findId(data, id) {
 
 app.get('/:id', function(req, res) {
     let item = findId(data, req.params.id)
-    if (!req) {
+    if (!item) {
         return res.status(404).json( {
             error: {
                 message: "No record found!"
