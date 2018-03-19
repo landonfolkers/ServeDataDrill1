@@ -2,6 +2,7 @@ let express = require('express')
 let cors = require('cors')
 let data = require('./data/cohorts')
 let app = express()
+let PORT = process.env.PORT || 3000
 
 app.use(cors())
 
@@ -26,8 +27,8 @@ app.get('/:id', function(req, res) {
             }
         })
     } else {
-         return res.json({data: item})
+        return res.json({data: item})
     }
 })
 
-app.listen(3000)
+app.listen(PORT)
